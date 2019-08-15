@@ -54,7 +54,7 @@ const FormField = ({ errors, touched, values, status }) => {
             checked={values.termsofservice}
           />
         </label>
-        <button className="input-fields">Submit!</button>
+        <button>Submit!</button>
       </Form>
       {users.map(user => (
         <p key={user.id}>{user.name}</p>
