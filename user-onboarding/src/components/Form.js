@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Field, withFormik } from 'formik';
+import '../App.css';
 import axios from 'axios';
 import * as Yup from "yup";
 
@@ -15,9 +16,11 @@ const FormField = ({ errors, touched, values, status }) => {
   }, [status]);
 
   return (
-    <div className="user-form">
-      <Form>
+    <div className="user-form-container">
+      <h1>Register!</h1>
+      <Form className="form-container">
         <Field
+          className="input-fields"
           component="input"
           type="text"
           name="name"
@@ -27,6 +30,7 @@ const FormField = ({ errors, touched, values, status }) => {
           <p>{errors.name}</p>
         )}
         <Field
+          className="input-fields"
           component="input"
           type="email"
           name="email"
@@ -36,12 +40,13 @@ const FormField = ({ errors, touched, values, status }) => {
           <p>{errors.email}</p>
         )}
         <Field
+          className="input-fields"
           component="input"
           type="password"
           name="password"
           placeholder="Password"
         />
-        <label>
+        <label className="input-fields">
           Terms of Service
           <Field
             type="checkbox"
@@ -49,7 +54,7 @@ const FormField = ({ errors, touched, values, status }) => {
             checked={values.termsofservice}
           />
         </label>
-        <button>Submit!</button>
+        <button className="input-fields">Submit!</button>
       </Form>
       {users.map(user => (
         <p key={user.id}>{user.name}</p>
